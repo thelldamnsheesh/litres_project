@@ -4,8 +4,9 @@ from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from utils import attach
 
-'''
+
 
 DEFAULT_BROWSER_VERSION = "100.0"
 
@@ -43,20 +44,20 @@ def setup_browser(request):
     password = os.getenv('PASSWORD')
     driver = webdriver.Remote(command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
                               options=options)
-    browser.config.base_url = "https://www.litres.ru/"
+    browser.config.base_url = "https://www.litres.ru"
     browser.config.driver = driver
     browser.config.driver_options = options
 
-    browser.config.timeout = 4.0
+#    browser.config.timeout = 4.0
     browser.config.window_width = 1920
     browser.config.window_height = 1080
 
     yield browser
 
-    #attach_web.add_screenshot(browser)
-    #attach_web.add_logs(browser)
-    #attach_web.add_html(browser)
-    #attach_web.add_video(browser)
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
+    attach.add_video(browser)
 
     browser.quit()
 '''    
@@ -65,7 +66,8 @@ def browser_options():
     browser.config.base_url = 'https://litres.ru'
     browser.config.window_width = 1440
     browser.config.window_height = 1860
-    browser.config.timeout = 6.0
+    #browser.config.timeout = 6.0
 
     yield
     browser.quit()
+'''

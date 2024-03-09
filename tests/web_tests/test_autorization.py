@@ -2,8 +2,14 @@ import os
 from pages.authorization_form import authorization
 from pages.main_page import main_page
 from data.users import User
+import allure
 
 
+@allure.epic('Авторизация пользователя')
+@allure.label("owner", "thelldamnsiiuu")
+@allure.tag('regress', 'web', 'registred user')
+@allure.severity('normal')
+@allure.label('web')
 def test_autorization_registred_user():
     user = User(
         name=os.getenv('USER_NAME'),
@@ -11,17 +17,33 @@ def test_autorization_registred_user():
         email=os.getenv('USER_EMAIL')
     )
 
-    main_page.open()
-    authorization.authorization_registred_user(user)
-    authorization.check_user_info(user)
+    with allure.step('Открываем главную страницу'):
+        main_page.open()
+
+    with allure.step('Открываем форму авторизации и вводим почту и пароль'):
+        authorization.authorization_registred_user(user)
+
+    with allure.step('Проверяем имя пользователя в личном кабинете'):
+        authorization.check_user_info(user)
 
 
+@allure.epic('Авторизация пользователя')
+@allure.label("owner", "thelldamnsiiuu")
+@allure.tag('regress', 'web', 'unregistred user')
+@allure.severity('normal')
+@allure.label('web')
 def test_autorization_unregistred_user():
     user = User(
         name=os.getenv('UR_USER_NAME'),
         password=os.getenv('UR_USER_PASSWORD'),
         email=os.getenv('UR_USER_EMAIL')
     )
-    main_page.open()
-    authorization.authorization_registred_user(user)
-    authorization.user_must_not_be_authorized()
+
+    with allure.step('Открываем главную страницу'):
+        main_page.open()
+
+    with allure.step('Открываем форму авторизации и вводим почту и пароль'):
+        authorization.authorization_registred_user(user)
+
+    with allure.step('Проверяем наличие заглушки'):
+        authorization.user_must_not_be_authorized()

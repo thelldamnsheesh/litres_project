@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9098d768-0f87-4982-9267-4a2644fd4c57" name="Changes" comment="Написал часть web теста">
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/data/users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/pages/authorization_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/pages/cart_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/pages/favorites_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/test_add_book_to_cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/test_add_book_to_favorites.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/test_autorization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/test_remove_book_from_cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/test_remove_book_from_favorites.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/test_searching_book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/.idea/litres_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../litres_project_test/.idea/litres_project_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../litres_project_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/../litres_project_test/tests/web_tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/data/books.py" beforeDir="false" afterPath="$PROJECT_DIR$/../litres_project_test/data/books.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/pages/book_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/../litres_project_test/pages/book_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/pages/main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/../litres_project_test/pages/main_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../litres_project_test/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../litres_project_test/test_searching_book.py" beforeDir="false" />
-    </list>
+    <list default="true" id="9098d768-0f87-4982-9267-4a2644fd4c57" name="Changes" comment="Написал часть web теста" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -473,22 +450,19 @@
       <option name="project" value="LOCAL" />
       <updated>1709934505805</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Написал часть web теста">
+      <option name="closed" value="true" />
+      <created>1709996574376</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709996574376</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Написал часть web теста" />
     <option name="LAST_COMMIT_MESSAGE" value="Написал часть web теста" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../litres_project_test/tests/web_tests/test_add_book_to_cart.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

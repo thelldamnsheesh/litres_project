@@ -28,7 +28,7 @@ class MainPage:
         return (self)
 
     def clean_searching_string(self):
-        browser.element('[data-testid="header__search-button--desktop"]').should(be.visible).type('df  gf1')
+        #browser.element('[data-testid="header__search-button--desktop"]').should(be.visible).type('df  gf1')
         browser.element('.SearchForm-module__clear_33FdF').should(be.visible).click()
 
     def search_book_bu_fullname(self, book):
