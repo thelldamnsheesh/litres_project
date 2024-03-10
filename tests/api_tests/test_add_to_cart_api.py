@@ -1,10 +1,10 @@
 import os.path
 import allure
 from jsonschema import validate
-import schemas
-from utils.load_schema import load_schema
-from utils.api_attach import api_put
-from data.books import book, book2
+from qa_guru_diplome_tests import schemas
+from qa_guru_diplome_tests.utils.load_schema import load_schema
+from qa_guru_diplome_tests.utils.api_attach import api_put
+from qa_guru_diplome_tests.data.books import book, book2
 
 base_url = 'https://api.litres.ru/foundation/api'
 headers = {"Content-Type": "application/json"}

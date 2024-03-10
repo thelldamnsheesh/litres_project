@@ -1,7 +1,7 @@
-from pages.cart_page import cart_page
-from pages.book_page import book_page
-from pages.favorites_page import favorites_page
-from data.books import book, book2
+from qa_guru_diplome_tests.pages.cart_page import cart_page
+from qa_guru_diplome_tests.pages.book_page import book_page
+from qa_guru_diplome_tests.pages.favorites_page import favorites_page
+from qa_guru_diplome_tests.data.books import book, book2
 import allure
 
 

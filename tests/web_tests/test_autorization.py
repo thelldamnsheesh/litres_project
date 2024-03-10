@@ -1,7 +1,7 @@
 import os
-from pages.authorization_form import authorization
-from pages.main_page import main_page
-from data.users import User
+from qa_guru_diplome_tests.pages.authorization_form import authorization
+from qa_guru_diplome_tests.pages.main_page import main_page
+from qa_guru_diplome_tests.data.users import User
 import allure
 
 

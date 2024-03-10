@@ -1,9 +1,9 @@
 import os
 import allure
 from jsonschema import validate
-import schemas
-from utils.api_attach import api_post
-from utils.load_schema import load_schema
+from qa_guru_diplome_tests import schemas
+from qa_guru_diplome_tests.utils.api_attach import api_post
+from qa_guru_diplome_tests.utils.load_schema import load_schema
 
 base_url = 'https://api.litres.ru/foundation/api'
 headers = {"Content-Type": "application/json"}

@@ -1,10 +1,10 @@
 import os
 from urllib.parse import quote
 import allure
-from utils.load_schema import load_schema
-import schemas
-from data.books import book, book2
-from utils.api_attach import api_get
+from qa_guru_diplome_tests.utils.load_schema import load_schema
+from qa_guru_diplome_tests import schemas
+from qa_guru_diplome_tests.data.books import book, book2
+from qa_guru_diplome_tests.utils.api_attach import api_get
 from jsonschema import validate
 
 base_url = 'https://api.litres.ru/foundation/api'
@@ -43,7 +43,6 @@ def test_get_search_book_by_title():
 
     assert response.status_code == 200
     validate(response.json(), load_schema(schema))
-    a = response.json()
 
 
 @allure.epic('API тесты. Поиск книги/аудиокниги')

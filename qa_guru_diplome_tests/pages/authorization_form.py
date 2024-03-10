@@ -2,7 +2,7 @@ from selene import browser, be, have
 
 
 class Authorization:
-    # Авторизация
+
     def authorization_registred_user(self, user):
         browser.element('[href="/pages/login/"]').should(be.visible).click()
         browser.element('[name="email"]').should(be.visible).type(user.email)

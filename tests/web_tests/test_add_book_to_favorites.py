@@ -1,9 +1,9 @@
 import allure
 
-from pages.main_page import main_page
-from pages.favorites_page import favorites_page
-from pages.book_page import book_page
-from data.books import book, book2
+from qa_guru_diplome_tests.pages.main_page import main_page
+from qa_guru_diplome_tests.pages.favorites_page import favorites_page
+from qa_guru_diplome_tests.pages.book_page import book_page
+from qa_guru_diplome_tests.data.books import book, book2
 
 
 @allure.epic('Добавление в избранное')

@@ -1,6 +1,6 @@
 import allure
-from data.books import book2, book
-from utils.api_attach import api_put
+from qa_guru_diplome_tests.data.books import book2, book
+from qa_guru_diplome_tests.utils.api_attach import api_put
 
 base_url = 'https://api.litres.ru/foundation/api'
 headers = {"Content-Type": "application/json"}
