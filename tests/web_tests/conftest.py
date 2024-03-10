@@ -6,8 +6,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utils import attach
 
-
-
 DEFAULT_BROWSER_VERSION = "100.0"
 
 
@@ -48,7 +46,6 @@ def setup_browser(request):
     browser.config.driver = driver
     browser.config.driver_options = options
 
-#    browser.config.timeout = 4.0
     browser.config.window_width = 1920
     browser.config.window_height = 1080
 
@@ -60,14 +57,3 @@ def setup_browser(request):
     attach.add_video(browser)
 
     browser.quit()
-'''    
-@pytest.fixture(scope='function', autouse=True)
-def browser_options():
-    browser.config.base_url = 'https://litres.ru'
-    browser.config.window_width = 1440
-    browser.config.window_height = 1860
-    #browser.config.timeout = 6.0
-
-    yield
-    browser.quit()
-'''
