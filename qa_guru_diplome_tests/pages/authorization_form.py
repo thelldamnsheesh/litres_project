@@ -14,7 +14,7 @@ class Authorization:
     def check_user_info(self, user):
         browser.element('[data-testid="header__profile-button"]').should(be.visible).click()
         browser.open("/pages/personal_cabinet_about_me/")
-        browser.element('span[class="user_header__name"]').should(have.text(user.name))
+        browser.element('.user_header__name').should(have.text(user.name))
         return self
 
     def user_must_not_be_authorized(self):
