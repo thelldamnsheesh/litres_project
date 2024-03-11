@@ -165,3 +165,7 @@ cython_debug/
 
 #Allure
 allure-results
+allure-report
+
+#Notifications
+notifications
