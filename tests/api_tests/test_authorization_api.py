@@ -15,7 +15,7 @@ SCHEMA_DIR = os.path.dirname(SCHEMA_INIT)
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'positive')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_registred_user_authorization_api():
     schema = os.path.join(SCHEMA_DIR, "successful_authorization.json")
     api = '/auth/login'
@@ -32,7 +32,7 @@ def test_registred_user_authorization_api():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'negative')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_invalid_password_user_authorization_api():
     schema = os.path.join(SCHEMA_DIR, "unsuccessful_authorization.json")
     api = '/auth/login'

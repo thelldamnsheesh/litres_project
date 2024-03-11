@@ -7,7 +7,7 @@ import allure
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_search_book_by_title():
 
     with allure.step('Открываем главную страницу'):
@@ -23,7 +23,7 @@ def test_search_book_by_title():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_searching_book_by_fullname():
 
     with allure.step('Открываем главную страницу'):
@@ -39,7 +39,7 @@ def test_searching_book_by_fullname():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_search_audiobook_by_title():
 
     with allure.step('Открываем главную страницу'):
@@ -55,7 +55,7 @@ def test_search_audiobook_by_title():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_searching_audiobook_by_fullname():
 
     with allure.step('Открываем главную страницу'):
@@ -71,7 +71,7 @@ def test_searching_audiobook_by_fullname():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_clean_search_input_string():
 
     with allure.step('Открываем главную страницу'):

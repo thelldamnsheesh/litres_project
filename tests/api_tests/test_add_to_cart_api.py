@@ -16,7 +16,7 @@ SCHEMA_DIR = os.path.dirname(SCHEMA_INIT)
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'audiobook')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_add_audiobook_to_cart_put_api():
     schema = os.path.join(SCHEMA_DIR, "add_book_to_cart.json")
     api = '/cart/arts/add'
@@ -35,7 +35,7 @@ def test_add_audiobook_to_cart_put_api():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_add_book_to_cart_put_api():
     schema = os.path.join(SCHEMA_DIR, "add_book_to_cart.json")
     api = '/cart/arts/add'

@@ -17,7 +17,7 @@ SCHEMA_DIR = os.path.dirname(SCHEMA_INIT)
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'audiobook')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_get_search_audiobook_by_title():
     schema = os.path.join(SCHEMA_DIR, "searching_book.json")
     query = quote(book.title)
@@ -33,7 +33,7 @@ def test_get_search_audiobook_by_title():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_get_search_book_by_title():
     schema = os.path.join(SCHEMA_DIR, "searching_book.json")
     query = quote(book2.title)
@@ -49,7 +49,7 @@ def test_get_search_book_by_title():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book', 'negative')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_get_search_book_by_title_negative_api():
     schema = os.path.join(SCHEMA_DIR, "unsuccessful_searching_book.json")
     query = 'dfvbaab SEFdfS '

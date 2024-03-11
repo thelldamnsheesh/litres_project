@@ -9,7 +9,7 @@ import allure
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'registred user')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_autorization_registred_user():
     user = User(
         name=os.getenv('USER_NAME'),
@@ -31,7 +31,7 @@ def test_autorization_registred_user():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'unregistred user')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_autorization_unregistred_user():
     user = User(
         name=os.getenv('UR_USER_NAME'),

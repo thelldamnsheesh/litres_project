@@ -10,7 +10,7 @@ from qa_guru_diplome_tests.data.books import book, book2
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_add_book_from_main():
 
     with allure.step('Открываем главную страницу'):
@@ -32,7 +32,7 @@ def test_add_book_from_main():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_add_book_from_book_page():
 
     with allure.step('Открываем страницу книги'):
@@ -48,7 +48,7 @@ def test_add_book_from_book_page():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_add_audiobook_from_main():
 
     with allure.step('Открываем главную страницу'):
@@ -71,7 +71,7 @@ def test_add_audiobook_from_main():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_add_audiobook_from_audiobook_page():
 
     with allure.step('Открываем страницу аудиокниги'):

@@ -10,7 +10,7 @@ headers = {"Content-Type": "application/json"}
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_add_book_to_favorite_api():
     api = '/wishlist/arts/'
     art_type = book2.art_type[0]
@@ -25,7 +25,7 @@ def test_add_book_to_favorite_api():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'audiobook')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_add_book_to_favorite_api():
     api = '/wishlist/arts/'
     art_type = book.art_type[0]

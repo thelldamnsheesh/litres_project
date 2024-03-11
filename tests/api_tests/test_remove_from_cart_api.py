@@ -10,7 +10,7 @@ headers = {"Content-Type": "application/json"}
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_remove_book_from_cart():
     api = '/cart/arts/remove'
     url = f'{base_url}{api}'
@@ -26,7 +26,7 @@ def test_remove_book_from_cart():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'audiobook')
 @allure.severity('normal')
-@allure.label('api')
+@allure.label('layer','api')
 def test_remove_audiobook_from_cart():
     api = '/cart/arts/remove'
     url = f'{base_url}{api}'

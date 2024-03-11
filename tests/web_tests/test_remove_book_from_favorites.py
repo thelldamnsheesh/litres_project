@@ -8,7 +8,7 @@ import allure
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_remove_book_from_favorites():
 
     with allure.step('Открываем страницу книги'):
@@ -30,7 +30,7 @@ def test_remove_book_from_favorites():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_remove_audiobook_from_favorites():
 
     with allure.step('Открываем страницу аудиокниги'):

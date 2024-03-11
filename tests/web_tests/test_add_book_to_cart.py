@@ -26,7 +26,7 @@ def test_add_book_to_cart_from_book_page():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_add_book_to_cart_from_favorites():
 
     with allure.step('Открываем страницу книги'):

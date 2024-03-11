@@ -9,7 +9,7 @@ import allure
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_remove_book_from_cart():
 
     with allure.step('Открываем страницу книги'):
@@ -32,7 +32,7 @@ def test_remove_book_from_cart():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('web')
+@allure.label('layer','web')
 def test_remove_book_from_cart_and_add_to_favorites():
 
     with allure.step('Открываем страницу книги'):
