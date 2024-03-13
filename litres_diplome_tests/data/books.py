@@ -24,7 +24,7 @@ book = Book(title='Златан Ибрагимович. Только бог мо
 
 book2 = Book(title='Дюна. Первая трилогия',
              author='Фрэнк Герберт',
-             price='799',
+             price='849',
              book_url='/frenk-gerbert/duna-pervaya-trilogiya-25440524/',
              book_type='book',
              reader='',
