@@ -17,7 +17,8 @@ class FavoritesPage:
     def remove_book_from_favorites(self):
         browser.open('/my-books/liked/')
         browser.element('div.ArtV2Default-module__like_button_1VLId > div').should(be.visible).click()
-        browser.element('//*[@id=":r4:"]/div/div/div[3]').should(be.visible).click()
+        browser.element('[data-testid="popover__content"]').should(have.text('Убрать из отложенного')).click()
+        #browser.element('//*[@id=":r4:"]/div/div/div[3]').should(be.visible).click()
         return self
 
     def check_empty_favorites(self):
@@ -28,8 +29,7 @@ class FavoritesPage:
     def add_book_to_cart(self):
         browser.open('/my-books/liked/')
         browser.element('div.ArtV2Default-module__like_button_1VLId > div').should(be.visible).click()
-        browser.element('//*[@id=":r4:"]/div/div/div[2]').should(be.visible).click()
+        browser.element
+        browser.element().should(have.text('Добавить в корзину')).click()
         return self
-
-
 favorites_page = FavoritesPage()
