@@ -3,7 +3,7 @@ from selene import browser, be, have
 
 class Authorization:
 
-    def authorization_registred_user(self, user):
+    def authorization_registered_user(self, user):
         browser.element('[href="/pages/login/"]').should(be.visible).click()
         browser.element('[name="email"]').should(be.visible).type(user.email)
         browser.element('.AuthContent-module__form__submit_jot-u > [type="submit"]').should(be.visible).click()

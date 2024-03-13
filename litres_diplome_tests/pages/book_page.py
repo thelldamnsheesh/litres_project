@@ -1,4 +1,4 @@
-from selene import browser, be
+from selene import browser, be, command
 
 
 class BookPage:
@@ -8,6 +8,8 @@ class BookPage:
 
     def add_book_to_cart(self):
         browser.execute_script("window.scrollTo(0,200)")
+        #browser.perform(command.)
+        #browser.driver.execute_script("document.body.style.zoom='90%'")
         browser.element('[data-testid="book__addToCartButton--desktop"]').should(be.visible).click()
         browser.element('[data-testid="modal__close--button"]').click()
         return self

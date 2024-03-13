@@ -1,5 +1,5 @@
-from qa_guru_diplome_tests.pages.main_page import main_page
-from qa_guru_diplome_tests.data.books import book, book2
+from litres_diplome_tests.pages.main_page import main_page
+from litres_diplome_tests.data.books import book, book2
 import allure
 
 

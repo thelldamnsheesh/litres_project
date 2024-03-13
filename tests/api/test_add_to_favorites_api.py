@@ -1,6 +1,6 @@
 import allure
-from qa_guru_diplome_tests.data.books import book2, book
-from qa_guru_diplome_tests.utils.api_attach import api_put
+from litres_diplome_tests.data.books import book2, book
+from litres_diplome_tests.utils.api_attach import request
 
 base_url = 'https://api.litres.ru/foundation/api'
 headers = {"Content-Type": "application/json"}
@@ -15,7 +15,7 @@ def test_add_book_to_favorite_api():
     api = '/wishlist/arts/'
     art_type = book2.art_type[0]
     url = f'{base_url}{api}{art_type}'
-    response = api_put(url)
+    response = request(url, method='PUT')
 
     assert response.status_code == 204
     assert response.text == ''
@@ -30,7 +30,7 @@ def test_add_book_to_favorite_api():
     api = '/wishlist/arts/'
     art_type = book.art_type[0]
     url = f'{base_url}{api}{art_type}'
-    response = api_put(url)
+    response = request(url, method='PUT')
 
     assert response.status_code == 204
     assert response.text == ''

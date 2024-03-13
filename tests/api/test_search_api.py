@@ -1,10 +1,10 @@
 import os
 from urllib.parse import quote
 import allure
-from qa_guru_diplome_tests.utils.load_schema import load_schema
-from qa_guru_diplome_tests import schemas
-from qa_guru_diplome_tests.data.books import book, book2
-from qa_guru_diplome_tests.utils.api_attach import api_get
+from litres_diplome_tests.utils.load_schema import load_schema
+from litres_diplome_tests import schemas
+from litres_diplome_tests.data.books import book, book2
+from litres_diplome_tests.utils.api_attach import request
 from jsonschema import validate
 
 base_url = 'https://api.litres.ru/foundation/api'
@@ -21,9 +21,14 @@ SCHEMA_DIR = os.path.dirname(SCHEMA_INIT)
 def test_get_search_audiobook_by_title():
     schema = os.path.join(SCHEMA_DIR, "searching_book.json")
     query = quote(book.title)
+    params = {
+        "limit": 12,
+        "q": f"{query}%",
+        "types": book.query_type
+    }
     api = '/search'
-    url = f'{base_url}{api}?limit=12&q={query}%&types={book.query_type}'
-    response = api_get(url, headers=headers)
+    url = f'{base_url}{api}?'
+    response = request(url, method='GET', headers=headers, params=params)
 
     assert response.status_code == 200
     validate(response.json(), load_schema(schema))
@@ -37,9 +42,14 @@ def test_get_search_audiobook_by_title():
 def test_get_search_book_by_title():
     schema = os.path.join(SCHEMA_DIR, "searching_book.json")
     query = quote(book2.title)
+    params = {
+        "limit": 12,
+        "q": f"{query}%",
+        "types": book.query_type
+    }
     api = '/search'
-    url = f'{base_url}{api}?limit=12&q={query}%&types={book2.query_type}'
-    response = api_get(url, headers=headers)
+    url = f'{base_url}{api}?'
+    response = request(url, method='GET', headers=headers, params=params)
 
     assert response.status_code == 200
     validate(response.json(), load_schema(schema))
@@ -54,8 +64,13 @@ def test_get_search_book_by_title_negative_api():
     schema = os.path.join(SCHEMA_DIR, "unsuccessful_searching_book.json")
     query = 'dfvbaab SEFdfS '
     api = '/search'
-    url = f'{base_url}{api}?limit=12&q={query}%&types={book2.query_type}'
-    response = api_get(url, headers=headers)
+    params = {
+        "limit": 12,
+        "q": f"{query}%",
+        "types": book.query_type
+    }
+    url = f'{base_url}{api}?'
+    response = request(url, method='GET', headers=headers, params=params)
 
     assert response.status_code == 200
     validate(response.json(), load_schema(schema))

@@ -1,6 +1,6 @@
-from qa_guru_diplome_tests.pages.favorites_page import favorites_page
-from qa_guru_diplome_tests.pages.book_page import book_page
-from qa_guru_diplome_tests.data.books import book, book2
+from litres_diplome_tests.pages.favorites_page import favorites_page
+from litres_diplome_tests.pages.book_page import book_page
+from litres_diplome_tests.data.books import book, book2
 import allure
 
 
