@@ -2,22 +2,17 @@ import os
 from urllib.parse import quote
 import allure
 from litres_diplome_tests.utils.load_schema import load_schema
-from litres_diplome_tests import schemas
 from litres_diplome_tests.data.books import book, book2
 from litres_diplome_tests.utils.api_attach import request
 from jsonschema import validate
-
-base_url = 'https://api.litres.ru/foundation/api'
-headers = {"Content-Type": "application/json"}
-SCHEMA_INIT = os.path.abspath(schemas.__file__)
-SCHEMA_DIR = os.path.dirname(SCHEMA_INIT)
+from tests.api.conftest import SCHEMA_DIR, base_url, headers
 
 
 @allure.epic('API тесты. Поиск книги/аудиокниги')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'audiobook')
 @allure.severity('normal')
-@allure.label('layer','api')
+@allure.label('layer', 'api')
 def test_get_search_audiobook_by_title():
     schema = os.path.join(SCHEMA_DIR, "searching_book.json")
     query = quote(book.title)
@@ -38,7 +33,7 @@ def test_get_search_audiobook_by_title():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book')
 @allure.severity('normal')
-@allure.label('layer','api')
+@allure.label('layer', 'api')
 def test_get_search_book_by_title():
     schema = os.path.join(SCHEMA_DIR, "searching_book.json")
     query = quote(book2.title)
@@ -59,7 +54,7 @@ def test_get_search_book_by_title():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book', 'negative')
 @allure.severity('normal')
-@allure.label('layer','api')
+@allure.label('layer', 'api')
 def test_get_search_book_by_title_negative_api():
     schema = os.path.join(SCHEMA_DIR, "unsuccessful_searching_book.json")
     query = 'dfvbaab SEFdfS '

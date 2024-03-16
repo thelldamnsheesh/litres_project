@@ -1,22 +1,17 @@
 import os.path
 import allure
 from jsonschema import validate
-from litres_diplome_tests import schemas
 from litres_diplome_tests.utils.load_schema import load_schema
 from litres_diplome_tests.utils.api_attach import request
 from litres_diplome_tests.data.books import book, book2
-
-base_url = 'https://api.litres.ru/foundation/api'
-headers = {"Content-Type": "application/json"}
-SCHEMA_INIT = os.path.abspath(schemas.__file__)
-SCHEMA_DIR = os.path.dirname(SCHEMA_INIT)
+from tests.api.conftest import SCHEMA_DIR, base_url, headers
 
 
 @allure.epic('API тесты. Добавление в корзину')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'audiobook')
 @allure.severity('normal')
-@allure.label('layer','api')
+@allure.label('layer', 'api')
 def test_add_audiobook_to_cart_put_api():
 
     schema = os.path.join(SCHEMA_DIR, "add_book_to_cart.json")
@@ -36,7 +31,7 @@ def test_add_audiobook_to_cart_put_api():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book')
 @allure.severity('normal')
-@allure.label('layer','api')
+@allure.label('layer', 'api')
 def test_add_book_to_cart_put_api():
     schema = os.path.join(SCHEMA_DIR, "add_book_to_cart.json")
     api = '/cart/arts/add'

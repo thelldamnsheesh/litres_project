@@ -1,16 +1,14 @@
 import allure
 from litres_diplome_tests.data.books import book2, book
 from litres_diplome_tests.utils.api_attach import request
-
-base_url = 'https://api.litres.ru/foundation/api'
-headers = {"Content-Type": "application/json"}
+from tests.api.conftest import base_url, headers
 
 
 @allure.epic('API тесты. Удаление из корзины')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'book')
 @allure.severity('normal')
-@allure.label('layer','api')
+@allure.label('layer', 'api')
 def test_remove_book_from_cart():
     api = '/cart/arts/remove'
     url = f'{base_url}{api}'
@@ -26,7 +24,7 @@ def test_remove_book_from_cart():
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'api', 'audiobook')
 @allure.severity('normal')
-@allure.label('layer','api')
+@allure.label('layer', 'api')
 def test_remove_audiobook_from_cart():
     api = '/cart/arts/remove'
     url = f'{base_url}{api}'
