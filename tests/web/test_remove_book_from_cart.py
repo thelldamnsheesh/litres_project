@@ -1,54 +1,21 @@
-from litres_diplome_tests.pages.cart_page import cart_page
-from litres_diplome_tests.pages.book_page import book_page
-from litres_diplome_tests.pages.favorites_page import favorites_page
-from litres_diplome_tests.data.books import book, book2
 import allure
+from litres_diplome_tests.data.books import book, book2
+from litres_diplome_tests.test_scenarios.remove_from_cart import tests_remove_from_cart
 
 
 @allure.epic('Удаление из корзины')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_remove_book_from_cart():
-
-    with allure.step('Открываем страницу книги'):
-        book_page.open(book2)
-
-    with allure.step('Добавляем книгу в корзину'):
-        book_page.add_book_to_cart()
-
-    with allure.step('Проверяем наличие книги в корзине'):
-        cart_page.check_book_in_a_cart(book2)
-
-    with allure.step('Удаляем книгу из корзины по нажатию кнопки'):
-        cart_page.remove_book_from_cart()
-
-    with allure.step('Проверяем что корзина пуста'):
-        cart_page.check_empty_cart()
+    tests_remove_from_cart.remove_book_from_cart(book2)
 
 
 @allure.epic('Удаление из корзины')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_remove_book_from_cart_and_add_to_favorites():
-
-    with allure.step('Открываем страницу книги'):
-        book_page.open(book)
-
-    with allure.step('Добавляем книгу в корзину'):
-        book_page.add_book_to_cart()
-
-    with allure.step('Проверяем наличие книги в корзине'):
-        cart_page.check_book_in_a_cart(book)
-
-    with allure.step('Удаляем книгу из корзины и добавляем в избранные по нажатию кнопки'):
-        cart_page.remove_book_from_cart_and_add_to_favorites()
-
-    with allure.step('Проверяем что корзина пуста'):
-        cart_page.check_empty_cart()
-
-    with allure.step('Проверяем наличие книги в избранном'):
-        favorites_page.check_book_in_favorites(book)
+    tests_remove_from_cart.remove_book_from_cart_and_add_to_favorites(book)

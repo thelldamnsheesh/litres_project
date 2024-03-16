@@ -1,84 +1,48 @@
-from litres_diplome_tests.pages.main_page import main_page
-from litres_diplome_tests.data.books import book, book2
 import allure
+from litres_diplome_tests.data.books import book, book2
+from litres_diplome_tests.test_scenarios.searching import test_searching
 
 
 @allure.epic('Поисковая строка')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_search_book_by_title():
+    test_searching.search_book_by_title(book2)
 
-    with allure.step('Открываем главную страницу'):
-        main_page.open()
-
-    with allure.step('Ищем книгу по названию'):
-        main_page.search_book_by_title(book2)
-
-    with allure.step('Проверяем результат поиска'):
-       main_page.check_searching_results(book2)
 
 @allure.epic('Поисковая строка')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_searching_book_by_fullname():
+    test_searching.searching_book_by_fullname(book2)
 
-    with allure.step('Открываем главную страницу'):
-        main_page.open()
-
-    with allure.step('Ищем книгу по полному названию (Название и автор)'):
-        main_page.search_book_bu_fullname(book2)
-
-    with allure.step('Проверяем результат поиска'):
-        main_page.check_searching_by_fullname_results(book2)
 
 @allure.epic('Поисковая строка')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_search_audiobook_by_title():
+    test_searching.search_book_by_title(book)
 
-    with allure.step('Открываем главную страницу'):
-        main_page.open()
-
-    with allure.step('Ищем книгу по названию'):
-        main_page.search_book_by_title(book)
-
-    with allure.step('Проверяем результат поиска'):
-        main_page.check_searching_results(book)
 
 @allure.epic('Поисковая строка')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_searching_audiobook_by_fullname():
+    test_searching.searching_book_by_fullname(book)
 
-    with allure.step('Открываем главную страницу'):
-        main_page.open()
-
-    with allure.step('Ищем книгу по полному названию (Название и автор)'):
-        main_page.search_book_bu_fullname(book)
-
-    with allure.step('Проверяем результат поиска'):
-        main_page.check_searching_by_fullname_results(book)
 
 @allure.epic('Поисковая строка')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_clean_search_input_string():
-
-    with allure.step('Открываем главную страницу'):
-        main_page.open()
-
-    with allure.step('Вводим название книги в поисковое поле'):
-        main_page.search_book_by_title(book2)
-
-    with allure.step('Чистим поисковую строку по нажатию на кнопку "х"'):
-        main_page.clean_searching_string()
+    test_searching.clean_search_input_string(book2)

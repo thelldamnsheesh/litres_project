@@ -5,7 +5,7 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from litres_diplome_tests.utils import attach
-'''
+
 DEFAULT_BROWSER_VERSION = "100.0"
 
 
@@ -57,13 +57,4 @@ def setup_browser(request):
     attach.add_html(browser)
     attach.add_video(browser)
 
-    browser.quit()
-'''
-@pytest.fixture(scope='function', autouse=True)
-def browser_options():
-    browser.config.base_url = 'https://litres.ru'
-    browser.config.window_width = 1440
-    browser.config.window_height = 1860
-
-    yield
     browser.quit()

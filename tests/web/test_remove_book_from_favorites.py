@@ -1,49 +1,21 @@
-from litres_diplome_tests.pages.favorites_page import favorites_page
-from litres_diplome_tests.pages.book_page import book_page
-from litres_diplome_tests.data.books import book, book2
 import allure
+from litres_diplome_tests.data.books import book, book2
+from litres_diplome_tests.test_scenarios.remove_from_favorites import test_remove_from_favorites
 
 
 @allure.epic('Удаление из избранного')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'book')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_remove_book_from_favorites():
+    test_remove_from_favorites.remove_book_from_favorites(book2)
 
-    with allure.step('Открываем страницу книги'):
-        book_page.open(book2)
-
-    with allure.step('Добавляем книгу в избранные'):
-        book_page.add_book_to_favorites()
-
-    with allure.step('Проверяем наличие книги в избранном'):
-        favorites_page.check_book_in_favorites(book2)
-
-    with allure.step('Удаляем книгу из избранного'):
-        favorites_page.remove_book_from_favorites()
-
-    with allure.step('Проверяем, что в избранном пусто'):
-        favorites_page.check_empty_favorites()
 
 @allure.epic('Удаление из избранного')
 @allure.label("owner", "thelldamnsiiuu")
 @allure.tag('regress', 'web', 'audiobook')
 @allure.severity('normal')
-@allure.label('layer','web')
+@allure.label('layer', 'web')
 def test_remove_audiobook_from_favorites():
-
-    with allure.step('Открываем страницу аудиокниги'):
-        book_page.open(book)
-
-    with allure.step('Добавляем аудиокнигу в избранные'):
-        book_page.add_book_to_favorites()
-
-    with allure.step('Проверяем наличие аудиокниги в избранном'):
-        favorites_page.check_book_in_favorites(book)
-
-    with allure.step('Удаляем аудиокнигу из избранного'):
-        favorites_page.remove_book_from_favorites()
-
-    with allure.step('Проверяем, что в избранном пусто'):
-        favorites_page.check_empty_favorites()
+    test_remove_from_favorites.remove_book_from_favorites(book)
